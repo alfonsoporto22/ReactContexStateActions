@@ -9,23 +9,23 @@ export function ContextProvider ( {children} ) {
         cifra: 23
     });
 
-    const [ sharedActions, setSharedActions ] = useState({
+    const actions = {
         setState: setSharedState,
-    })
+    }
 
     const [ sharedContext, setSharedContext ] = useState({
         state: sharedState,
-        actions: sharedActions
+        actions
     })
 
     useEffect(
         ()=>{
             setSharedContext({
                 state: sharedState,
-                actions: sharedActions
+                actions
             })
         },
-        [sharedState, sharedContext]
+        [sharedState]
     )
 
     return (
