@@ -3,7 +3,7 @@ import { Context } from "../SharedState"
 
 function MainTitle () {
 
-    const { state, actions } = useContext(Context);
+    const { state } = useContext(Context);
 
     return (
         <p>{state.saludo}, humano.</p>
